@@ -5,16 +5,15 @@ import seaborn as sns
 
 
 df = pd.read_csv("Data.csv")
-# print(df)
 
-mat.figure(figsize=(10,6))
+df['Date'] = pd.to_datetime(df['Date'])
 
-s1 = sns.scatterplot(data=df,x='Date',y='Temperature')
-print(s1)
+print(df.head())
+print(df.info())
+print(df.describe())
 
-mat.title('first data')
-mat.yscale('Temperature')
-mat.xscale('Date')
-
-mat.tight_layout()
-mat.show()
+df.fillna({
+    'Precipitation':0,
+    'WindSpeed':df['WindSpeed'].mean(),
+    'Humidity':df['Humidity'].mean()
+})
