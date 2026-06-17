@@ -17,3 +17,12 @@ df.fillna({
     'WindSpeed':df['WindSpeed'].mean(),
     'Humidity':df['Humidity'].mean()
 })
+
+df['Month'] = df['Date'].dt.month
+df['Day'] = df['Date'].dt.day
+
+avg_temp = df['Temperature'].mean()
+avg_humidity = df['Humidity'].mean()
+print("----------------------------------------------------------------------------------------------------")
+print (f'the average humidity is {avg_humidity:.2f} and the average tmeperature is {avg_temp:.2f}')
+print("----------------------------------------------------------------------------------------------------")
