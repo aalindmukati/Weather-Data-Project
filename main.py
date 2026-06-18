@@ -73,3 +73,14 @@ def hum():
     mat.title('Daily Humidity Analysis') # Graph ka main heading
     mat.show() # Graph ko screen par display karne ke liye
 
+def tempvhum():
+    fig, ax1 = mat.subplots(figsize=(15, 6))
+    ax1.scatter(df['Temperature'],df['Humidity'],color='Purple',marker = '|',s=50,alpha = 0.8)
+    ax1.set_xlabel('Temperature (°C)', fontsize=12)
+    ax1.set_ylabel('Humidity (%)', fontsize=12)
+    ax1.tick_params(axis='both',color='black')
+    ax1.grid(True, linestyle=':', alpha=0.6)
+    mat.title('Temperature vs Humidity Relationship (Scatter Plot)', fontsize=14, fontweight='bold')
+    mat.show()
+
+
