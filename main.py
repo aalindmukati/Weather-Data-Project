@@ -32,22 +32,9 @@ df['Day'] = df['Date'].dt.day
 avg_temp = df['Temperature'].mean()
 avg_humidity = df['Humidity'].mean()
 print("----------------------------------------------------------------------------------------------------")
-print (f'the average humidity is {avg_humidity:.2f} and the average tmeperature is {avg_temp:.2f}')
+print (f'the average humidity is {avg_humidity:.2f}% and the average tmeperature is {avg_temp:.2f}C')
 print("----------------------------------------------------------------------------------------------------")
 
-fig,ax1 = mat.subplots(figsize =(15,6))#Makes the canvas for matplot
-
-#Plots the df in the canvas
-ax1.plot(df['Date'],df['Temperature'],color='red',marker='o',linewidth = 2.5,label = 'temp(C)')
-# x and y label for canvas
-ax1.set_xlabel('Date',fontsize = 12)
-ax1.set_ylabel('Temperature',fontsize = 12)
-
-# jo axis p color hota h usko define krte h
-
-ax1.tick_params(axis='y', labelcolor='crimson')
-ax1.grid(True, linestyle=':', alpha=0.6)
-
-mat.title('Daily Temperature Analysis') # Graph ka main heading
-mat.show() # Graph ko screen par display karne ke liye
-
+# jo df h uske jo value h usko validate krta h
+condition_count = df['Condition'].value_counts
+print(condition_count)
