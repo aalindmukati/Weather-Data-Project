@@ -75,12 +75,21 @@ def hum():
 
 def tempvhum():
     fig, ax1 = mat.subplots(figsize=(15, 6))
-    ax1.scatter(df['Temperature'],df['Humidity'],color='Purple',marker = '|',s=50,alpha = 0.8)
+    ax1.scatter(df['Temperature'],df['Humidity'],color='Purple',marker = '|',s=50,alpha = 1)
     ax1.set_xlabel('Temperature (°C)', fontsize=12)
     ax1.set_ylabel('Humidity (%)', fontsize=12)
     ax1.tick_params(axis='both',color='black')
     ax1.grid(True, linestyle=':', alpha=0.6)
     mat.title('Temperature vs Humidity Relationship (Scatter Plot)', fontsize=14, fontweight='bold')
     mat.show()
-
-
+print("----------------------------------------------------------------------------------------------------")
+print("----------------------------------------------------------------------------------------------------")
+choice = int(input('What would u like to see 1.temperature 2.humidity 3.temp vs humidity: \n'))
+if choice == 1:
+    temp()
+elif choice == 2:
+    hum()
+elif choice == 3:
+    tempvhum()
+else:
+    print('Invalid input please run the code again')
